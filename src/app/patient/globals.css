@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  font-family: "Urbanist", sans-serif;
+  margin: 0;
+  background-color: #070B14;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+  .scroll::-webkit-scrollbar-thumb {
+    background: #131922;
+  }
+  .action_btn{
+    background: linear-gradient(90deg, #6122B3 0%, #C92D78 100%);
+  }
+  .faq-item {
+    transition: all 0.3s ease;
+  }
+  .faq-item.expanded {
+    padding: 20px 1rem; 
+  }
+  .activeForum{
+    border: 1px solid rgba(201, 45, 120, 0.30);
+    background-color: #C92D784D;
+  }
+  .formTabs{
+    background-color: #1C1F2D;
+    border: 1px solid #1C1F2D;
+
+  }
+  .list li{
+    list-style-type: decimal;
+  }
+  .subStep_list li{
+    border-radius:  4px 35px 35px 4px;
+  }
+  .subStep_list li:after{
+    content: "";
+    background-image: url("../../common/assets/svgs/arrow-right.svg");
+    position: absolute;
+    right: -22px;
+    top: 0;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 26px;
+    bottom: 0;
+    margin: auto;
+  }
+  .subStep_list li:last-child::after{
+    display: none;
+  }
+  .stepper_list li:last-child span{
+    display: none;
+  }
+  .stepper_list li span{
+    content: "";
+  }
+  
+  @media screen and (max-width:767px){
+    .overflowScript{
+      overflow-x: scroll;
+    }
+    .removeClass{
+      visibility: hidden;
+      transition: 0.4s;
+      opacity: 0;
+    }
+    .addClass{
+      width: 80%!important;
+      visibility: visible;
+      opacity: 1;
+      transition: 0.4s;
+    }
+  }
+
+
+  .symptoms-wrapper .symptoms-field{
+    display: none;
+}
+
+.symptoms-wrapper .syptoms-label {
+    border: 1px solid rgba(164, 172, 185, 0.20);
+    padding: 10px 23px;
+    cursor: pointer;
+}
+.symptoms-wrapper .syptoms-label .selected-icon {
+    display: none;
+}
+.symptoms-wrapper .symptoms-field:checked + .syptoms-label{
+    border: 1px solid  var(--mainPurple);
+    background: linear-gradient(0deg, rgba(97, 34, 179, 0.20) 0%, rgba(97, 34, 179, 0.20) 100%), #1C1F2D;
+}
+.symptoms-wrapper .symptoms-field:checked + .syptoms-label .selected-icon {
+    display: block;
+}
+}
